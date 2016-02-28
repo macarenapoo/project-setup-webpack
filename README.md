@@ -40,7 +40,7 @@ Create your index.html file inside your public folder, don’t forget to add you
 
 Most likely you want to use Sass or any other preprocessor for CSS. Webpack allows you to compile and add other really cool plugins to manage your styles.
 
-##Compiling SASS into CSS
+###Compiling SASS into CSS
 To be able to compile Sass into CSS we have to use loaders. Loaders are some sort of plugins that basically tell web pack “When you find this kind of file, do his with it”. For compiling Sass into CSS we’re going to install some loaders on the terminal:
 
 ```
@@ -97,7 +97,7 @@ require(‘./sass/manifest.scss’);
 
 You can run `webpack` on the terminal and it should load the styles.
 
-##Extract files into CSS files
+###Extract files into CSS files
 
 Our styles should be working, but if you notice, they are being added by the js file, as opposed to having our external stylesheet. For this we’re going to use another external plugin called extract-text-webpack-plugin.
 
@@ -108,12 +108,12 @@ npm install extract-text-webpack-plugin —save-dev
 
 And we need to change some configuration on our webpack.config.js file:
 
-# We require the Extract Text Plugin:
+We require the Extract Text Plugin:
 ```
 var ExtractText = require(‘extract-text-webpack-plugin’);
 ```
 
-# Then we modify our loaders:
+Then we modify our loaders:
 ```
 {
   test: /\.scss/,
@@ -123,7 +123,7 @@ var ExtractText = require(‘extract-text-webpack-plugin’);
 
 The extract method on the plugin takes two parameters, the first one is what to do with the extracted contents, and the second one is what do to with the main file.
 
-# Lastly, we have to specify the output file, and we do this the following way:
+Lastly, we have to specify the output file, and we do this the following way:
 
 ```
 var ExtractText = require(‘extract-text-webpack-plugin’);
@@ -150,7 +150,7 @@ plugins: [
 
 When you run `webpack` in the terminal again, you can see that now the styles are being loaded from an external stylesheet.
 
-##Autoprefixer and Postcss
+###Autoprefixer and Postcss
 
 PostCSS is a plugin to parse CSS and add vendor prefixes to CSS rules using values from Can I Use. In other words it allows you to write your css without vendor prefixes and compiles it with all the necessary vendor prefixers for browser compatibility. Cool right?
 
@@ -161,12 +161,12 @@ npm install autoprefixer postcss postcss-loader --save-dev
 
 Then on our webpack.config.js we have to add post css as a loader, and specify the version to use.
 
-# We first require autoprefixer at the top:
+We first require autoprefixer at the top:
 ```
 var autoprefixer = require(‘autoprefixer’);
 ```
 
-# Then we add the loader to our stylesheets:
+Then we add the loader to our stylesheets:
 ```
 {
   test: /\.scss/,
@@ -174,7 +174,7 @@ var autoprefixer = require(‘autoprefixer’);
 }
 ```
 
-# Lastly we need to add some configuration for the postcss plugin. Your webpack config file should look something like this:
+Lastly we need to add some configuration for the postcss plugin. Your webpack config file should look something like this:
 
 ```
 var ExtractText = require(‘extract-text-webpack-plugin’);
@@ -205,7 +205,7 @@ module.exports = {
 
 And that’s it! You should be able to run `webpack` and then `webpack-dev-server` and see your project on http://localhost:8080/public
 
-#Running on Webpack Dev Server
+##Running on Webpack Dev Server
 On `package.json` you can add a script to configure webpack-dev-server to run a specific subdirectory (you can also specify a specific port and other configurations). Add the following script to your `package.json`
 
 ```
@@ -214,4 +214,4 @@ On `package.json` you can add a script to configure webpack-dev-server to run a 
 }
 ```
 
-Now you can run `npm start` on the terminal and go to http://localhost:8080 to go to `public/index.html` from your compiled project.
+Now you can run `npm start` on the terminal and go to (http://localhost:8080) to go to `public/index.html` from your compiled project.
