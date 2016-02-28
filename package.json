@@ -1,0 +1,25 @@
+{
+  "name": "project-setup-webpack",
+  "version": "1.0.0",
+  "description": "Template for a Webpack Project including setting sass compilers and autoprefixers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack && webpack-dev-server --content-base public/"
+  },
+  "author": "Macarena Poo",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-loader": "^0.4.3",
+    "node-sass": "^3.4.2",
+    "postcss": "^5.0.17",
+    "postcss-loader": "^0.8.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
