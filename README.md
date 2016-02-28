@@ -205,13 +205,15 @@ module.exports = {
 
 And that’s it! You should be able to run `webpack` and then `webpack-dev-server` and see your project on http://localhost:8080/public
 
-##Running on Webpack Dev Server
-On `package.json` you can add a script to configure webpack-dev-server to run a specific subdirectory (you can also specify a specific port and other configurations). Add the following script to your `package.json`
+##Webpack Dev Server Config
+On `webpack.config.js` you can add some configuration for webpack-dev-server (you can also specify a specific port and other configurations). Add the following script to your `package.json`
 
 ```
-"scripts": {
-  "start": "webpack && webpack-dev-server --content-base public/"
+devServer: {
+  inline: true,
+  port: 3333,
+  contentBase: 'public'
 }
 ```
 
-Now you can run `npm start` on the terminal and go to (http://localhost:8080) to go to `public/index.html` from your compiled project.
+Now if you run `webpack-dev-server` and go to (http://localhost:3333) you'll be going directly to `public/index.html`.

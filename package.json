@@ -4,8 +4,7 @@
   "description": "Template for a Webpack Project including setting sass compilers and autoprefixers.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack && webpack-dev-server --content-base public/"
+    
   },
   "author": "Macarena Poo",
   "license": "ISC",
